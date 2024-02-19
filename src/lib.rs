@@ -51,7 +51,7 @@ fn inject_stylesheet(content: &str) -> Result<String, Error> {
 fn render_callouts(content: &str) -> Result<String, Error> {
     static RE: Lazy<Regex> = Lazy::new(|| {
         // Regex::new(r"(?m)^> \[!(?P<kind>[^\]]+)\]\s*$(?P<body>(?:\n>.*)*)")
-        Regex::new(r"(?m)^> \[!(?P<kind>[^\]]+)\]\ ?(?P<title>[^\n]+)?\s*$(?P<body>(?:\n>.*)*)")
+        Regex::new(r"(?m)^> \[!(?P<kind>[^\]]+)\]\ {1}(?P<title>[^\n]+)?\s*$(?P<body>(?:\n>.*)*)")
             .expect("failed to parse regex")
     });
     let alerts = Asset::get("alerts.tmpl").expect("alerts.tmpl not found in assets");
