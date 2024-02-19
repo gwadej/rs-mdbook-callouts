@@ -8,4 +8,4 @@ title = "Example of mdbook-alerts"
 [build]
 build-dir = "example/book"
 
-[preprocessor.alerts]
+[preprocessor.callouts]
