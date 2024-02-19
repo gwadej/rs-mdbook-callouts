@@ -1,9 +1,9 @@
-[![crates.io](https://img.shields.io/crates/v/mdbook-alerts.svg)](https://crates.io/crates/mdbook-alerts)
-[![docs.rs](https://docs.rs/mdbook-alerts/badge.svg)](https://docs.rs/mdbook-alerts)
+[![crates.io](https://img.shields.io/crates/v/mdbook-callouts.svg)](https://crates.io/crates/mdbook-callouts)
+[![docs.rs](https://docs.rs/mdbook-callouts/badge.svg)](https://docs.rs/mdbook-callouts)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
-[![Build](https://github.com/lambdalisue/rs-mdbook-alerts/actions/workflows/build.yml/badge.svg)](https://github.com/lambdalisue/rs-mdbook-alerts/actions/workflows/build.yml)
-[![Test](https://github.com/lambdalisue/rs-mdbook-alerts/actions/workflows/test.yml/badge.svg)](https://github.com/lambdalisue/rs-mdbook-alerts/actions/workflows/test.yml)
-[![Audit](https://github.com/lambdalisue/rs-mdbook-alerts/actions/workflows/audit.yml/badge.svg)](https://github.com/lambdalisue/rs-mdbook-alerts/actions/workflows/audit.yml)
+[![Build](https://github.com/GrayJack/rs-mdbook-callouts/actions/workflows/build.yml/badge.svg)](https://github.com/GrayJack/rs-mdbook-callouts/actions/workflows/build.yml)
+[![Test](https://github.com/GrayJack/rs-mdbook-callouts/actions/workflows/test.yml/badge.svg)](https://github.com/GrayJack/rs-mdbook-callouts/actions/workflows/test.yml)
+[![Audit](https://github.com/GrayJack/rs-mdbook-callouts/actions/workflows/audit.yml/badge.svg)](https://github.com/GrayJack/rs-mdbook-callouts/actions/workflows/audit.yml)
 
 # mdbook-callouts
 
