@@ -38,7 +38,7 @@ impl mdbook::preprocess::Preprocessor for Preprocessor {
 
 fn handle_chapter(chapter: &mut Chapter) -> Result<(), Error> {
     chapter.content = inject_stylesheet(&chapter.content)?;
-    chapter.content = render_alerts(&chapter.content)?;
+    chapter.content = render_callouts(&chapter.content)?;
     Ok(())
 }
 
@@ -48,7 +48,7 @@ fn inject_stylesheet(content: &str) -> Result<String, Error> {
     Ok(format!("<style>\n{style}\n</style>\n{content}"))
 }
 
-fn render_alerts(content: &str) -> Result<String, Error> {
+fn render_callouts(content: &str) -> Result<String, Error> {
     static RE: Lazy<Regex> = Lazy::new(|| {
         Regex::new(r"(?m)^> \[!(?P<kind>[^\]]+)\]\s*$(?P<body>(?:\n>.*)*)")
             .expect("failed to parse regex")

@@ -18,7 +18,7 @@ pub enum Commands {
 fn main() {
     let args = Args::parse();
 
-    let preprocessor = mdbook_alerts::Preprocessor;
+    let preprocessor = mdbook_callouts::Preprocessor;
     if let Some(Commands::Supports { renderer }) = args.command {
         handle_supports(&preprocessor, &renderer);
     } else if let Err(e) = handle_preprocessing(&preprocessor) {
