@@ -50,6 +50,9 @@
 
 > [!QUOTE]
 > Quoted information that is particularly relevant or insightful.
+
+> [!QUOTE] Custom title example
+> You can set a custom title by adding the title in the same line as the tag.
 ```
 
 into

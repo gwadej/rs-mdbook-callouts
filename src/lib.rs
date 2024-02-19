@@ -50,7 +50,8 @@ fn inject_stylesheet(content: &str) -> Result<String, Error> {
 
 fn render_callouts(content: &str) -> Result<String, Error> {
     static RE: Lazy<Regex> = Lazy::new(|| {
-        Regex::new(r"(?m)^> \[!(?P<kind>[^\]]+)\]\s*$(?P<body>(?:\n>.*)*)")
+        // Regex::new(r"(?m)^> \[!(?P<kind>[^\]]+)\]\s*$(?P<body>(?:\n>.*)*)")
+        Regex::new(r"(?m)^> \[!(?P<kind>[^\]]+)\]\ ?(?P<title>[^\n]+)?\s*$(?P<body>(?:\n>.*)*)")
             .expect("failed to parse regex")
     });
     let alerts = Asset::get("alerts.tmpl").expect("alerts.tmpl not found in assets");
@@ -61,13 +62,22 @@ fn render_callouts(content: &str) -> Result<String, Error> {
             .expect("kind not found in regex")
             .as_str()
             .to_lowercase();
+        let title = caps
+            .name("title")
+            .map(|m| m.as_str())
+            .unwrap_or(kind.as_str())
+            .to_lowercase();
         let body = caps
             .name("body")
             .expect("body not found in regex")
             .as_str()
             .replace("\n>\n", "\n\n")
             .replace("\n> ", "\n");
-        alerts.replace("{kind}", &kind).replace("{body}", &body)
+
+        alerts
+            .replace("{title}", &title)
+            .replace("{kind}", &kind)
+            .replace("{body}", &body)
     });
     Ok(content.into())
 }
